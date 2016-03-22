@@ -18,8 +18,8 @@ public class Imoveis {
 
     public Imoveis(Imoveis i){
         this.rua = i.getRua();
-        this.preco_pedido = i.getPrecoPedido();
-        this.preco_aceite = i.getPrecoAceite();
+        this.preco_pedido = i.getPreco_pedido();
+        this.preco_aceite = i.getPreco_aceite();
     }
 
     public String getRua() {

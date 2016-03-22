@@ -7,10 +7,16 @@ public class Vendedores extends User{
 
 
 
-    public Vendedores(String email, String nome, String password, String morada, GregorianCalendar data_nascimento, ArrayList<Imoveis> imoveis_mercado, ArrayList<Imoveis> imoveis_vendidos) {
-        super(email, nome, password, morada, data_nascimento);
-        this.imoveis_mercado = imoveis_mercado.clone();
-        this.imoveis_vendidos = imoveis_vendidos.clone();
+    public Vendedores(String email, String nome, String password, String morada, String data, ArrayList<Imoveis> imoveis_mercado, ArrayList<Imoveis> imoveis_vendidos) {
+        super(email, nome, password, morada, data);
+        this.imoveis_mercado = imoveis_mercado;
+        this.imoveis_vendidos = imoveis_vendidos;
+    }
+
+    public Vendedores(Vendedores v){
+        super(v.getEmail(), v.getNome(), v.getPassword(), v.getMorada(), v.getData_nascimento().toString());
+        this.imoveis_mercado = v.getImoveis_mercado();
+        this.imoveis_vendidos = v.getImoveis_vendidos();
     }
 
     public ArrayList<Imoveis> getImoveis_mercado() {
@@ -26,4 +32,6 @@ public class Vendedores extends User{
     public void setImoveis_vendidos(ArrayList<Imoveis> imoveis_vendidos) {
         this.imoveis_vendidos = imoveis_vendidos;
     }
+
+
 }

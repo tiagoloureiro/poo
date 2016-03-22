@@ -4,9 +4,14 @@ import java.util.ArrayList;
 public class Compradores extends User{
     private ArrayList<Imoveis> lista_imoveis;
 
-    public Compradores(String email, String nome, String password, String morada, GregorianCalendar data_nascimento, ArrayList<Imoveis> lista_imoveis) {
-        super(email, nome, password, morada, data_nascimento);
-        this.lista_imoveis = lista_imoveis.clone();
+    public Compradores(String email, String nome, String password, String morada, String data, ArrayList<Imoveis> lista_imoveis) {
+        super(email, nome, password, morada, data);
+        this.lista_imoveis = lista_imoveis;
+    }
+
+    public Compradores(Compradores c ){
+        super(c.getEmail(), c.getNome(), c.getPassword(), c.getMorada(), c.getData_nascimento().toString());
+        this.lista_imoveis = c.getLista_imoveis();
     }
 
     public ArrayList<Imoveis> getLista_imoveis() {
