@@ -96,11 +96,5 @@ public class User {
         return sb.toString();
     }
 
-    public ArrayList<Imoveis> copiaArray(ArrayList<Imoveis> cop){
-        ArrayList<Imoveis> novo = new ArrayList<Imoveis>();
-        for (Imoveis x: cop) {
-            novo.add(x.clone());
-        }
-        return novo;
-    }
+
 }

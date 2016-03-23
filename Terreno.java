@@ -36,7 +36,37 @@ public class Terreno extends Imoveis{
     public void setKWh_maximo(int kWh_maximo){this.kWh_maximo = kWh_maximo;}
     public void setAcesso_esgotos(boolean acesso_esgotos){this.acesso_esgotos = acesso_esgotos;}
 
+    //clone
     public Terreno clone(){
         return new Terreno(this);
     }
+
+    public boolean equals (Object t){
+        if (this == t) return true;
+        if ((t == null) || (this.getClass() != t.getClass())) return false;
+
+        Terreno te = (Terreno) t;
+        return (this.area_construcao == getArea_construcao() && this.tipo.equals(te.getTipo()) && this.diametro_canalizacao == te.getDiametro_canalizacao() && this.kWh_maximo == te.getKWh_maximo() && this.acesso_esgotos == te.getAcesso_esgotos());
+    }
+    
+    //toString
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Tipo: ");
+        sb.append(this.getTipo() + " | ");
+        sb.append("Area de construção: ");
+        sb.append(this.getArea_construcao() + " | ");
+        sb.append("Diametro Canalização: ");
+        sb.append(this.getDiametro_canalizacao() + " | ");
+        sb.append("Capacidade de kWh maxima: ");
+        sb.append(this.getKWh_maximo() + " | ");
+        sb.append("Acesso a esgotos: ");
+        sb.append(this.getAcesso_esgotos());
+
+        return sb.toString();
+    }
+
 }
+
+

@@ -11,6 +11,4 @@ comment4.params=imoveis_mercado
 comment4.target=void\ setImoveis_mercado(java.util.ArrayList)
 comment5.params=imoveis_vendidos
 comment5.target=void\ setImoveis_vendidos(java.util.ArrayList)
-comment6.params=
-comment6.target=Vendedores\ clone()
-numComments=7
+numComments=6

@@ -47,7 +47,39 @@ public class Moradia extends Imoveis{
     public void setNum_wcs(int num_wcs){this.num_wcs = num_wcs;}
     public void setNum_porta(int num_porta){this.num_porta = num_porta;}
 
+    //clone
     public Moradia clone(){
         return new Moradia(this);
+    }
+    
+    // equals
+    public boolean equals (Object m){
+        if (this == m) return true;
+        if ((m == null) || (this.getClass() != m.getClass())) return false;
+
+        Moradia me = (Moradia) m;
+        return (this.tipo.equals(me.getTipo()) && this.area_implantacao == me.getArea_implantacao() && this.area_coberta == me.getArea_coberta() && this.area_terreno == me.getArea_terreno()  && this.num_quartos == me.getNum_quartos() && this.num_wcs == me.getNum_wcs() && this.num_porta == me.getNum_porta());
+    }
+
+    //toString
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Tipo: ");
+        sb.append(this.getTipo() + " | ");
+        sb.append("Area Implantação: ");
+        sb.append(this.getArea_implantacao() + " | ");
+        sb.append("Area Coberta: ");
+        sb.append(this.getArea_coberta() + " | ");
+        sb.append("Area do Terreno: ");
+        sb.append(this.getArea_terreno() + " | ");
+        sb.append("Numero de quartos: ");
+        sb.append(this.getNum_quartos() + " | ");
+        sb.append("Numero de WC: ");
+        sb.append(this.getNum_wcs() + " | ");
+        sb.append("Numero da porta: ");
+        sb.append(this.getNum_porta() + " | ");
+
+        return sb.toString();
     }
 }

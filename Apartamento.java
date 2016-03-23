@@ -77,7 +77,40 @@ public class Apartamento extends Imoveis{
         this.possui_garagem = possui_garagem;
     }
 
+    //clone
     public Apartamento clone(){
         return new Apartamento(this);
+    }
+
+    // equals
+
+    public boolean equals (Object a){
+        if (this == a) return true;
+        if ((a == null) || (this.getClass() != a.getClass())) return false;
+
+        Apartamento ae = (Apartamento) a;
+        return (this.tipo.equals(ae.getTipo()) && this.area_total == ae.getArea_total() && this.num_quartos == ae.getNum_quartos() && this.num_wcs == ae.getNum_wcs() && this.num_porta == ae.getNum_porta() && this.andar == ae.getAndar() && this.possui_garagem == ae.getPossuiGaragem());
+    }
+
+    //toString
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Tipo: ");
+        sb.append(this.getTipo() + " | ");
+        sb.append("Area total: ");
+        sb.append(this.getArea_total() + " | ");
+        sb.append("Numero de quartos: ");
+        sb.append(this.getNum_quartos() + " | ");
+        sb.append("Numero de WC: ");
+        sb.append(this.getNum_wcs() + " | ");
+        sb.append("Numero da porta: ");
+        sb.append(this.getNum_porta() + " | ");
+        sb.append("Andar: ");
+        sb.append(this.getAndar() + " | ");
+        sb.append("Possui garagem: ");
+        sb.append(this.getPossuiGaragem());
+
+        return sb.toString();
     }
 }

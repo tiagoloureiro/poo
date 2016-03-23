@@ -41,7 +41,36 @@ public class Imoveis {
         this.preco_aceite = preco_aceite;
     }
 
+    //clone
     public Imoveis clone(){
         return new Imoveis(this);
     }
+    
+    // equals
+    public boolean equals (Object i){
+        if (this == i) return true;
+        if ((i == null) || (this.getClass() != i.getClass())) return false;
+
+        Imoveis ie = (Imoveis) i;
+        return (this.rua.equals(ie.getRua()) && this.preco_pedido == ie.getPreco_pedido() && this.preco_aceite == ie.getPreco_aceite());
+    }
+    
+    //toString
+        public String toString(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Rua: ");
+        sb.append(this.getRua() + " | ");
+        sb.append("Preco Pedido: ");
+        sb.append(this.getPreco_pedido() + " | ");
+        sb.append("Preco Aceite: ");
+        sb.append(this.getPreco_aceite());
+
+        return sb.toString();
+    }
+
+
+
 }
+
+

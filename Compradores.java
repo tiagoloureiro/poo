@@ -6,7 +6,7 @@ public class Compradores extends User{
 
     public Compradores(String email, String nome, String password, String morada, String data, ArrayList<Imoveis> lista_imoveis) {
         super(email, nome, password, morada, data);
-        this.lista_imoveis = copiaArray(lista_imoveis);
+        this.lista_imoveis = lista_imoveis;
     }
 
     public Compradores(Compradores c ){
@@ -20,10 +20,6 @@ public class Compradores extends User{
 
     public void setLista_imoveis(ArrayList<Imoveis> lista_imoveis) {
         this.lista_imoveis = lista_imoveis;
-    }
-
-    public Compradores clone(){
-        return new Compradores(this);
     }
 }
 
