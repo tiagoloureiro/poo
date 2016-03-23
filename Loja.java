@@ -32,4 +32,8 @@ public class Loja extends Imoveis{
     public void setPossui_wc(boolean possui_wc){this.possui_wc = possui_wc;}
     public void setNum_porta(int num_porta){this.num_porta = num_porta;}
     public void setTipo_negocio(String tipo_negocio){this.tipo_negocio = tipo_negocio;}
+
+    public Loja clone(){
+        return new Loja(this);
+    }
 }

@@ -76,5 +76,8 @@ public class Apartamento extends Imoveis{
     public void setPossui_garagem(boolean possui_garagem) {
         this.possui_garagem = possui_garagem;
     }
-    
+
+    public Apartamento clone(){
+        return new Apartamento(this);
+    }
 }

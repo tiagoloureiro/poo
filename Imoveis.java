@@ -40,4 +40,8 @@ public class Imoveis {
     public void setPreco_aceite(double preco_aceite) {
         this.preco_aceite = preco_aceite;
     }
+
+    public Imoveis clone(){
+        return new Imoveis(this);
+    }
 }

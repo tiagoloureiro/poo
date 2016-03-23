@@ -46,4 +46,8 @@ public class Moradia extends Imoveis{
     public void setNum_quartos(int num_quartos){this.num_quartos = num_quartos;}
     public void setNum_wcs(int num_wcs){this.num_wcs = num_wcs;}
     public void setNum_porta(int num_porta){this.num_porta = num_porta;}
+
+    public Moradia clone(){
+        return new Moradia(this);
+    }
 }

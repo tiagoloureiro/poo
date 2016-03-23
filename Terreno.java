@@ -35,4 +35,8 @@ public class Terreno extends Imoveis{
     public void setDiametro_canalizacao(double diametro_canalizacao){this.diametro_canalizacao = diametro_canalizacao;}
     public void setKWh_maximo(int kWh_maximo){this.kWh_maximo = kWh_maximo;}
     public void setAcesso_esgotos(boolean acesso_esgotos){this.acesso_esgotos = acesso_esgotos;}
+
+    public Terreno clone(){
+        return new Terreno(this);
+    }
 }

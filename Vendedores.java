@@ -9,8 +9,8 @@ public class Vendedores extends User{
 
     public Vendedores(String email, String nome, String password, String morada, String data, ArrayList<Imoveis> imoveis_mercado, ArrayList<Imoveis> imoveis_vendidos) {
         super(email, nome, password, morada, data);
-        this.imoveis_mercado = imoveis_mercado;
-        this.imoveis_vendidos = imoveis_vendidos;
+        this.imoveis_mercado = copiaArray(imoveis_mercado);
+        this.imoveis_vendidos = copiaArray(imoveis_vendidos);
     }
 
     public Vendedores(Vendedores v){
@@ -33,5 +33,7 @@ public class Vendedores extends User{
         this.imoveis_vendidos = imoveis_vendidos;
     }
 
-
+    public Vendedores clone(){
+        return new Vendedores(this);
+    }
 }
